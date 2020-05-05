@@ -22,6 +22,7 @@ import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import java.time.*;
+import java.time.temporal.ChronoUnit;
 import java.util.*;
 
 /**
@@ -1022,7 +1023,7 @@ public class Main extends Application{
 		}
 		
 		// Calculate how many pages the user reads per day based on reading data
-		double avgPagesPerDay = totalPagesRead / (readingMap.firstEntry().getKey().until(LocalDate.now()).getDays());
+		double avgPagesPerDay = totalPagesRead / (readingMap.firstEntry().getKey().until(LocalDate.now(), ChronoUnit.DAYS));
 		
 		avgPageLength /= count;             // Calculate average book length
 		genStats.add(avgPageLength);        // Add the average book length the the list
