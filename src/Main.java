@@ -708,6 +708,8 @@ public class Main extends Application{
 		ToolBar menu = generateNavMenu(allBooks);
 		ToolBar search = generateSearchBar("About", allBooks);
 		
+		
+		
 		VBox view = new VBox(search, menu);
 		return view;
 		
